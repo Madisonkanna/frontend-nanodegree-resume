@@ -1,5 +1,6 @@
-var formattedName = HTMLheaderName.replace("%data%", name);
+var formattedName = HTMLheaderName.replace("%data%", "Madison Kanna");
 
-$("#header").append("Madison Kanna");
+
+$("#header").append(formattedName);
 
 
