@@ -24,3 +24,18 @@ var bio = {
 	"bioPic": "images/image.jpeg"
 }
 
+var work = {};
+work.position = "Executive Assistant";
+work.employer = "Dominant Players";
+work.years = 1.2;
+
+var education = {};
+education["name"] = Udacity
+education["years"] = "2015-2016"
+education["city"] = "Sacramento"
+
+$("#main").append(work["position"]);
+$("#main").append(education.name);
+
+
+
