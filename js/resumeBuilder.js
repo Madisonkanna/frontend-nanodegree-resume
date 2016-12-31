@@ -10,7 +10,7 @@ $("#header").prepend(formattedName);
 
 var bio = {
 	"name" : "Madison Kanna",
-	"role": "Web Developer"
+	"role": "Web Developer",
 	"contacts": {
 		"mobile": "916-599-5151",
 		"email": "madisonkanna",
@@ -20,6 +20,6 @@ var bio = {
 	},
 	"welcomeMessage": "Welcome to my online resume!"
 	"skills": [
-		"awesomeness", "JS", "HTML and CSS"]
+		"awesomeness", "JS", "HTML and CSS"],
 	"bioPic": "images/image.jpeg"
 }
