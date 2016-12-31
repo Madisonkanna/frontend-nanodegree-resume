@@ -13,13 +13,14 @@ var bio = {
 	"role": "Web Developer",
 	"contacts": {
 		"mobile": "916-599-5151",
-		"email": "madisonkanna",
+		"email": "madisonkanna@gmail.com",
 		"github": "madisonkanna",
 		"twitter": "@madisonkanna",
-		"location:" "Sacramento", 
+		"location": "Sacramento", 
 	},
-	"welcomeMessage": "Welcome to my online resume!"
+	"welcomeMessage": "Welcome to my online resume!",
 	"skills": [
 		"awesomeness", "JS", "HTML and CSS"],
 	"bioPic": "images/image.jpeg"
 }
+
