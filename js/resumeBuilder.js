@@ -1,3 +1,14 @@
+var cameron = {};
+cameron.job = "course dev";
+
+var courses = 0;
+while(cameron.job === "course dev") {
+	makeCourse();
+	courses= courses + 1;
+}
+
+
+
 if(bio.skills.length > 0) {
 
 	$("#header").append(HTMLskillsStart);
