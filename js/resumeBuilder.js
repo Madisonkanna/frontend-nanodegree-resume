@@ -1,12 +1,21 @@
 var cameron = {};
 cameron.job = "course dev";
 
+var makeCourse = function() {
+	// make a course
+	console.log("Made a course");
+}
+
 var courses = 0;
 while(cameron.job === "course dev") {
 	makeCourse();
 	courses= courses + 1;
+	if(courses === 10) {
+		cameron.job = "learning specialist"
+	}
 }
 
+console.log(cameron.job);
 
 
 if(bio.skills.length > 0) {
@@ -50,13 +59,14 @@ var education = {
 		"majors": ["CS"],
 		"dates": 2013,
 		"url": "http://example.com"
-	}
+	},
 	{
 		"name": "Eckerd College",
 		"city": "Saint Petersburg, FL"
 		"degree": "BA"
-	}
-	],
+	},
+	]
+];
 	"onlineCourses": [
 	{
 		"title": "JavaScript Crash Course",
