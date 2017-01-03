@@ -1,41 +1,77 @@
-
-var name = "Madison Kanna"
-var formattedName = HTMLheaderName.replace("%data%", name);
-
-var role = "Web Developer";
-var formattedRole = HTMLheaderRole.replace("%data%", role)
-
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
 var bio = {
-	"name" : "Madison Kanna",
+	"name" : "John Doe",
 	"role": "Web Developer",
 	"contacts": {
-		"mobile": "916-599-5151",
-		"email": "madisonkanna@gmail.com",
-		"github": "madisonkanna",
-		"twitter": "@madisonkanna",
-		"location": "Sacramento", 
+		"mobile": "650-555-5555",
+		"email": "john@example.com",
+		"github": "johndoe",
+		"twitter": "@johndoe",
+		"location": "San Francisco", 
 	},
 	"welcomeMessage": "Welcome to my online resume!",
 	"skills": [
 		"awesomeness", "JS", "HTML and CSS"],
-	"bioPic": "images/image.jpeg"
+	"bioPic": "images/fry.jpg"
 }
 
-var work = {};
-work.position = "Executive Assistant";
-work.employer = "Dominant Players";
-work.years = 1.2;
+var education = {
+	"schools": [
+	{
+		"name": "Nova Southeastern University",
+		"city": "Fort Lauderdale, FL",
+		"degree": "Masters",
+		"majors": ["CS"],
+		"dates": 2013,
+		"url": "http://example.com"
+	}
+	{
+		"name": "Eckerd College",
+		"city": "Saint Petersburg, FL"
+		"degree": "BA"
+	}
+	],
+	"onlineCourses": [
+	{
+		"title": "JavaScript Crash Course",
+		"school" : "Udacity",
+		"date": 2014,
+		"url": "http://www.udacity.com/course/ud804"
+		}
+	]
+}
 
-var education = {};
-education["name"] = Udacity
-education["years"] = "2015-2016"
-education["city"] = "Sacramento"
+var work = {
+	"jobs": [
+	{
+		"employer": "Planet Express",
+		"title": "Delivery Boy",
+		"dates": "January 3000 - Future"
+		"description": "Who moved my cheese"
+	},
+	{
+		"employer": "Panucci's Pizza",
+		"title": "Delivery Boy",
+		"dates": "1998 - December 31, 1999"
+		"description": "Who moved my cheese"
+	}
+  ]
+}
 
-$("#main").append(work["position"]);
-$("#main").append(education.name);
+var projects = {
+	"projects": [
+		{
+			"title": "Sample project 1",
+			"dates": "2014"
+			"description": "Who moved my cheese"
+			"images": [
+			"http://lh3.ggpt.com"
+			]
+		}
+	]
+	
+}
+
+
 
 
 
