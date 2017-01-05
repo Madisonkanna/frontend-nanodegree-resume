@@ -34,23 +34,34 @@ work.years = 0.3;
 var education = {
 	"schools": [
 	{
-		"name": "Eckerd College",
-		"city": "Saint Petersburg, FL, US",
-		"degree": "BA",
-		"major": [
-		"Comp Sci", "French"]
+		"name": "Nova Southeastern University",
+		"location": "Fort Lauderdale, FL",
+		"degree": "Masters",
+		"majors": ["CS"],
+		"dates": 2013,
+		"url": "http://example.com"
 	},
 	{
-		"name": "Nova Southeastern University",
-		"city": "Fort Lauderdale, FL, US",
-		"degree": "Masters",
-		"major": ["CompSci"
-		]
-
+		"name": "Eckerd College",
+		"location:" "Saint Petersburg, FL",
+		"degree": "BA",
+		"majors": ["CS"]
+		"url": "http://example.com"
 	}
-
-  ]
 ]
+},
+	"onlineCourses": [
+	{
+		"title": "JavaScript Syntax",
+		"school": "Udacity",
+		"dates": 2014,
+		"url": "http://www.udacity.com/courses/ud804"
+	}
+	]
+}
+
+
+
 
 $("#main").append(work["position"])
 $("#main").append(education.name)
