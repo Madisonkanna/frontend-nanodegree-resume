@@ -1,3 +1,22 @@
+
+
+
+
+
+
+
+var formattedName = HTMLheaderName.replace("%data%", name);
+
+var role = "Web Developer";
+var name = "Madison";
+
+var formattedRole = HTMLheaderRole.replace("$data$", role);
+
+$("#header").prepend(formattedName);
+$("#header").prepend(formattedRole);
+
+
+
 var cameron = {};
 cameron.job = "course dev";
 
@@ -32,10 +51,3 @@ if(bio.skills.length > 0) {
 	$("#skills").append(formattedSkill);
 
 }
-
-
-
-
-
-
-
