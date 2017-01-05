@@ -31,8 +31,26 @@ work.position = "Course Developer";
 work.employer = "Udacity";
 work.years = 0.3;
 
-var education = {};
-education["name"] = "Nova Southeastern University";
+var education = {
+	"schools": [
+	{
+		"name": "Eckerd College",
+		"city": "Saint Petersburg, FL, US",
+		"degree": "BA",
+		"major": [
+		"Comp Sci", "French"]
+	},
+	{
+		"name": "Nova Southeastern University",
+		"city": "Fort Lauderdale, FL, US",
+		"degree": "Masters",
+		"major": ["CompSci"
+		]
+
+	}
+
+  ]
+]
 
 $("#main").append(work["position"])
 $("#main").append(education.name)
