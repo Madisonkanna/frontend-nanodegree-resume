@@ -6,11 +6,9 @@ var role = "Web Developer";
 
 var formattedRole = HTMLheaderRole.replace("%data%", role);
 
-var skills = ["awesomeness", "programming", "teaching", "JS"];
-$("#header").append(skills);
-
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
+
 
 var bio = {
 	"name" : "John Doe",
@@ -25,10 +23,20 @@ var bio = {
 	"welcomeMessage": "Welcome to my site!",
 	"skills": ["awesomeness", "delivering things", "cryogenic sleep", "saving the universe"],
 	"bioPic": "images/fry.jpg"
-
 }
 
-$("#main").append(bio.role);
+
+var work = {};
+work.position = "Course Developer";
+work.employer = "Udacity";
+work.years = 0.3;
+
+var education = {};
+education["name"] = "Nova Southeastern University";
+
+$("#main").append(work["position"])
+$("#main").append(education.name)
+
 
 
 cameron = {};
