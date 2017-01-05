@@ -1,20 +1,15 @@
 
 
-
-
-
-
-
 var formattedName = HTMLheaderName.replace("%data%", name);
 
 var role = "Web Developer";
-var name = "Madison";
 
-var formattedRole = HTMLheaderRole.replace("$data$", role);
+var formattedRole = HTMLheaderRole.replace("%data%", role);
 
-$("#header").prepend(formattedName);
+
+
 $("#header").prepend(formattedRole);
-
+$("#header").prepend(formattedName);
 
 
 var cameron = {};
