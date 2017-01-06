@@ -1,5 +1,4 @@
-
-
+var name = "John Doe";
 var formattedName = HTMLheaderName.replace("%data%", name);
 
 var role = "Web Developer";
@@ -25,46 +24,87 @@ var bio = {
 	"bioPic": "images/fry.jpg"
 }
 
-
-var work = {};
-work.position = "Course Developer";
-work.employer = "Udacity";
-work.years = 0.3;
-
 var education = {
-	"schools": [
-	{
-		"name": "Nova Southeastern University",
-		"location": "Fort Lauderdale, FL",
-		"degree": "Masters",
-		"majors": ["CS"],
-		"dates": 2013,
-		"url": "http://example.com"
-	},
-	{
-		"name": "Eckerd College",
-		"location:" "Saint Petersburg, FL",
-		"degree": "BA",
-		"majors": ["CS"]
-		"url": "http://example.com"
-	}
-]
-},
-	"onlineCourses": [
-	{
-		"title": "JavaScript Syntax",
-		"school": "Udacity",
-		"dates": 2014,
-		"url": "http://www.udacity.com/courses/ud804"
-	}
-	]
+  "schools": [
+    {
+      "name": "Nova Southeastern University",
+      "location": "Fort Lauderdale, FL",
+      "degree": "Masters",
+      "majors": ["CS"],
+      "dates": 2013,
+      "url": "http://example.com"
+    },
+    {
+      "name": "Eckerd College",
+      "location": "Saint Petersburg, FL",
+      "degree": "BA",
+      "majors": ["CS"],
+      "dates": 2003,
+      "url": "http://example.com"
+    }
+  ],
+  "onlineCourses": [
+    {
+      "title": "JavaScript Syntax",
+      "school": "Udacity",
+      "date": 2014,
+      "url": "http://www.udacity.com/course/ud804"
+    }
+  ]
+}
+
+
+var work = {
+  "jobs": [
+    {
+      "employer": "Planet Express",
+      "title": "Delivery Boy",
+      "dates": "January 3000 - Future",
+      "description": "Description here"
+    },
+    {
+      "employer": "Panucci's Pizza",
+      "title": "Delivery Boy",
+      "dates": "1998",
+      "description": "Description here"
+    }
+  ]
+}
+
+var projects = {
+  "projects": [
+    {
+      "title": "Sample Project 1",
+      "dates": "2014",
+      "description": "My sample project description",
+      "images": [
+        "http://www.example.com",
+        "http://example.com"
+      ]
+    }
+  ]
+}
+
+
+for (job in work.jobs) {
+	$("workExperience").append(HTMLworkStart);
+
+	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+	var formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+
 }
 
 
 
+for (job in work.jobs) {
+  $("#workExperience").append(HTMLworkStart);
 
-$("#main").append(work["position"])
-$("#main").append(education.name)
+  var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+  var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+
+}  
 
 
 
