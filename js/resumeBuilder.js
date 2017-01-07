@@ -5,6 +5,7 @@ var role = "Web Developer";
 
 var formattedRole = HTMLheaderRole.replace("%data%", role);
 
+
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
@@ -19,10 +20,14 @@ var bio = {
 		"twitter": "@johndoe",
 		"location": "San Francisco"
 	},
-	"welcomeMessage": "Welcome to my site!",
+	"welcomeMessage": "Welcome to my site",
 	"skills": ["awesomeness", "delivering things", "cryogenic sleep", "saving the universe"],
 	"bioPic": "images/fry.jpg"
 }
+
+
+
+
 
 var education = {
   "schools": [
@@ -60,13 +65,13 @@ var work = {
       "employer": "Planet Express",
       "title": "Delivery Boy",
       "dates": "January 3000 - Future",
-      "description": "Description here"
+      "description": "This is a description of the work experience at Planet Express"
     },
     {
       "employer": "Panucci's Pizza",
       "title": "Delivery Boy",
       "dates": "1998",
-      "description": "Description here"
+      "description": "This is a description of the work experience at Panucci's Pizza"
     }
   ]
 }
@@ -87,23 +92,18 @@ var projects = {
 
 
 for (job in work.jobs) {
-	$("workExperience").append(HTMLworkStart);
-
-	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-	var formattedEmployerTitle = formattedEmployer + formattedTitle;
-
-
-}
-
-
-
-for (job in work.jobs) {
   $("#workExperience").append(HTMLworkStart);
 
   var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
   var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+  var formattedEmployerTitle = formattedEmployer + formattedTitle;
+  var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+  var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 
+
+  $(".work-entry:last").append(formattedEmployerTitle);
+  $(".work-entry:last").append(formattedDates);
+  $(".work-entry:last").append(formattedDescription);
 }  
 
 
@@ -128,6 +128,7 @@ while(cameron.job === "course dev") {
 console.log(cameron.job);
 
 
+
 if(bio.skills.length > 0) {
 
 	$("#header").append(HTMLskillsStart);
@@ -142,3 +143,8 @@ if(bio.skills.length > 0) {
 	$("#skills").append(formattedSkill);
 
 }
+
+
+var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+$("#mapDiv").append(googleMap);
+
