@@ -183,3 +183,32 @@ displayEducation();
 
 
 $("#mapDiv").append(googleMap);
+
+
+
+
+ function locationFinder() {
+
+    var locations = ["San Francisco", "Silicon Valley"];
+
+    locations.push(bio.contacts.location);
+
+    education.schools.forEach(function(school){
+      locations.push(school.location);
+    });
+
+    work.jobs.forEach(function(job){
+      locations.push(job.location);
+    });
+
+    return locations;
+  }
+
+  displayLocations();
+
+
+
+
+
+
+
