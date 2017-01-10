@@ -1,14 +1,3 @@
-var name = "John Doe";
-var formattedName = HTMLheaderName.replace("%data%", name);
-
-var role = "Web Developer";
-
-var formattedRole = HTMLheaderRole.replace("%data%", role);
-
-
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
 
 var bio = {
 	"name" : "John Doe",
@@ -20,26 +9,38 @@ var bio = {
 		"twitter": "@johndoe",
 		"location": "San Francisco"
 	},
-	"welcomeMessage": "Welcome to my site",
+	"welcomeMsg": "Welcome to my site",
 	"skills": ["awesomeness", "delivering things", "cryogenic sleep", "saving the universe"],
 	"bioPic": "images/fry.jpg"
   }
 
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
+
+var formattedContactInfo = [];
+formattedContactInfo.push(HTMLemail.replace("%data%", bio.contacts.email));
+formattedContactInfo.push(HTMLgithub.replace("%data%", bio.contacts.github));
+formattedContactInfo.push(HTMLtwitter.replace("%data%", bio.contacts.twitter));
+formattedContactInfo.push(HTMLlocation.replace("%data%", bio.contacts.location));
+
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+$("#header").append(formattedBioPic);
+$("#header").append(formattedWelcomeMsg);
 
 if(bio.skills.length > 0) {
-
   $("#header").append(HTMLskillsStart);
 
-  var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-  $("#skills").append(formattedSkill);
-  var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-  $("skills").append(formattedSkill);
-  var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-  $("#skills").append(formattedSkill);
-  var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-  $("#skills").append(formattedSkill);
+  for(item in bio.skills) {
+    $("#skills").append(HTMLskills.replace("%data%", bio.skills[item]));
+  }
+}
 
-
+for(item in formattedContactInfo) {
+  $("#topContacts").append(formattedContactInfo[item]);
+  $("#footerContacts").append(formattedContactInfo[item]);
 }
 
 
@@ -166,11 +167,14 @@ for (school in education.schools) {
 
 for (onlineClasses in education.onlineClasses) {
     $("#education").append(HTMLonlineClasses);
-    var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineClasses[onlineSchool].school);
-    $("#education").append(HTMLonlineClasses);
+
+    var formattedonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineClasses[onlineClasses].title);
+    var formattedonlineSchool = HTMLonlineSchool.replace("%data%", education.onlineClasses[onlineClasses].school);
+
+
+    $(".education-entry:last").append(formattedonlineTitle);
     $(".education-entry:last").append(formattedonlineSchool);
   }
-
 
 
 }
@@ -178,3 +182,4 @@ for (onlineClasses in education.onlineClasses) {
 displayEducation();
 
 
+$("#mapDiv").append(googleMap);
