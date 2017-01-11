@@ -1,17 +1,18 @@
 
+
 var bio = {
-	"name" : "John Doe",
-	"role": "Web Developer",
-	"contacts": {
-		"mobile": "650-555-5555",
-		"email": "john@example.com",
-		"github": "johndoe",
-		"twitter": "@johndoe",
-		"location": "San Francisco"
-	},
-	"welcomeMsg": "Welcome to my site",
-	"skills": ["awesomeness", "delivering things", "cryogenic sleep", "saving the universe"],
-	"bioPic": "images/fry.jpg"
+  "name" : "John Doe",
+  "role": "Web Developer",
+  "contacts": {
+    "mobile": "650-555-5555",
+    "email": "john@example.com",
+    "github": "johndoe",
+    "twitter": "@johndoe",
+    "location": "San Francisco"
+  },
+  "welcomeMsg": "Welcome to my site",
+  "skills": ["awesomeness", "delivering things", "cryogenic sleep", "saving the universe"],
+  "bioPic": "images/fry.jpg"
   }
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -25,8 +26,8 @@ formattedContactInfo.push(HTMLgithub.replace("%data%", bio.contacts.github));
 formattedContactInfo.push(HTMLtwitter.replace("%data%", bio.contacts.twitter));
 formattedContactInfo.push(HTMLlocation.replace("%data%", bio.contacts.location));
 
-$("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
+$("#header").prepend(formattedRole);
 $("#header").append(formattedBioPic);
 $("#header").append(formattedWelcomeMsg);
 
@@ -77,7 +78,19 @@ function displayWork() {
   }  
 }
 
+
 displayWork();
+
+function locationizer(work_object) {
+  var locationArray = [];
+
+  for (job in work_obj.jobs) {
+    var newLocation = work_obj.job[job].location;
+    locationArray.push(newLocation);
+  }
+  return locationArray;
+}
+
 
 var projects = {
   "projects": [
@@ -94,26 +107,7 @@ var projects = {
 }
 
 
-function displayProjects() {
 
-  for (project in projects.projects) {
-  $("#projects").append(HTMLprojectStart);
-
-
-  var formattedprojectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-  var formattedprojectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-  var formattedprojectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-  var formattedprojectImage = HTMLworkDates.replace("%data%", projects.projects[project].images);
-
-
-  $(".project-entry:last").append(formattedprojectTitle);
-  $(".project-entry:last").append(formattedprojectDates);
-  $(".project-entry:last").append(formattedprojectDescription);
-  $(".project-entry:last").append(formattedprojectImage);
-  } 
-}
-
-displayProjects();
 
 var education = {
   "schools": [
@@ -176,39 +170,11 @@ for (onlineClasses in education.onlineClasses) {
     $(".education-entry:last").append(formattedonlineSchool);
   }
 
-
 }
 
 displayEducation();
 
+$('#main').append(internationalizeButton)
 
 $("#mapDiv").append(googleMap);
-
-
-
-
- function locationFinder() {
-
-    var locations = ["San Francisco", "Silicon Valley"];
-
-    locations.push(bio.contacts.location);
-
-    education.schools.forEach(function(school){
-      locations.push(school.location);
-    });
-
-    work.jobs.forEach(function(job){
-      locations.push(job.location);
-    });
-
-    return locations;
-  }
-
-  displayLocations();
-
-
-
-
-
-
 
