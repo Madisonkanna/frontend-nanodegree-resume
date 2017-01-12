@@ -140,17 +140,6 @@ work.display = function() {
 
 work.display();
 
-function locationizer(work_object) {
-  var locationArray = [];
-
-  for (job in work_obj.jobs) {
-    var newLocation = work_obj.job[job].location;
-    locationArray.push(newLocation);
-  }
-  return locationArray;
-}
-
-
 
 education.display = function() {
 
@@ -214,7 +203,6 @@ projects.display = function() {
 projects.display();
 
 
-//$('#main').append(internationalizeButton)
 
 $("#mapDiv").append(googleMap);
 
