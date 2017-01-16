@@ -1,4 +1,3 @@
-
 var bio = {
   "name" : "John Doe",
   "role": "Web Developer",
@@ -10,10 +9,9 @@ var bio = {
     "location": "San Francisco"
   },
   "welcomeMsg": "Welcome to my site",
-  "skills": ["awesomeness", "delivering things", "cryogenic sleep", "saving the universe"],
+  "skills": ["awesomeness", " delivering things", " cryogenic sleep", "saving the world"],
   "bioPic": "images/fry.jpg"
-  }
-
+  };
 
 var work = {
   "jobs": [
@@ -32,7 +30,7 @@ var work = {
       "description": "This is a description of the work experience at Panucci's Pizza"
     }
   ]
-}
+};
 
 var education = {
   "schools": [
@@ -61,7 +59,7 @@ var education = {
       "url": "http://www.udacity.com/course/ud804"
     }
   ]
-}
+};
 
 var projects = {
   "projects": [
@@ -74,22 +72,21 @@ var projects = {
       ]
     }
   ]
-}
+};
 
 // Bio object
 
 bio.display = function() {
 
-  var formattedContactInfo = [];
-  formattedContactInfo.push(HTMLemail.replace("%data%", bio.contacts.email));
-  formattedContactInfo.push(HTMLgithub.replace("%data%", bio.contacts.github));
-  formattedContactInfo.push(HTMLtwitter.replace("%data%", bio.contacts.twitter));
-  formattedContactInfo.push(HTMLlocation.replace("%data%", bio.contacts.location));
+  var formattedcontactEmail = HTMLemail.replace("%data%", bio.contacts.email);
+  var formattedcontactGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+  var formattedcontactTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+  var formattedcontactLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+  var formattedcontactInfo = formattedcontactEmail + formattedcontactGithub + formattedcontactTwitter + formattedcontactLocation;
+  $("#footerContacts").append(formattedcontactInfo);
+  $("#topContacts").append(formattedcontactInfo);
 
-  for(contact in formattedContactInfo) {
-  $("#footerContacts").append(formattedContactInfo[contact]);
-  $("#topContacts").append(formattedContactInfo[contact]);
-}
+};
   
   var formattedName = HTMLheaderName.replace("%data%", bio.name);
   var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -102,11 +99,8 @@ bio.display = function() {
   if(bio.skills.length > 0) {
   $("#header").append(HTMLskillsStart);
 
-  for(i in bio.skills) {
-    $("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
-  }
-}
-
+  var formattedSkills = HTMLskills.replace("%data%", bio.skills);
+  $("#skills").append(formattedSkills);
 }
 
 bio.display();
@@ -172,15 +166,11 @@ projects.display = function() {
     if (project.images.length > 0){
       var formattedprojectimage = HTMLprojectImage.replace("%data%", project.images);
       $(".project-entry:last").append(formattedprojectimage);
-    };
+    }
   });
 };
 
 
 projects.display();
 
-
-// Add map to page
-
 $("#mapDiv").append(googleMap);
-
