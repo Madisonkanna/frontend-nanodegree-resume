@@ -26,7 +26,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: black;
   line-height: 48px;
   display: inline;
 }
@@ -81,7 +81,7 @@ h5 {
 
 p {
   font-size: 14px;
-  color: #333;
+  color: #999;
   line-height: 21px;
 }
 
@@ -105,7 +105,7 @@ a {
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #f3f3f3;
 }
 
 .orange-text {
@@ -117,8 +117,8 @@ a {
   color: #fff;
 }
 
-.gray {
-  background-color: #f3f3f3;
+.blue {
+  background-color: #4a4a4a;
   padding-bottom: 10px;
   clear:both;
 }
@@ -127,9 +127,8 @@ a {
   background-color: #4a4a4a;
 }
 
-/* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #1e90ff;
 }
 
 .flex-box {
