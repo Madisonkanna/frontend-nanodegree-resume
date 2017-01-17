@@ -74,11 +74,12 @@ var projects = {
 
 bio.display = function() {
 
+    var formattedcontactMobile = HTMLmobile.replace(data, bio.contacts.mobile);
     var formattedcontactEmail = HTMLemail.replace(data, bio.contacts.email);
     var formattedcontactGithub = HTMLgithub.replace(data, bio.contacts.github);
     var formattedcontactTwitter = HTMLtwitter.replace(data, bio.contacts.twitter);
     var formattedcontactLocation = HTMLlocation.replace(data, bio.contacts.location);
-    var formattedcontactInfo = formattedcontactEmail + formattedcontactGithub + formattedcontactTwitter + formattedcontactLocation;
+    var formattedcontactInfo = formattedcontactMobile + formattedcontactEmail + formattedcontactGithub + formattedcontactTwitter + formattedcontactLocation;
     $("#footerContacts").append(formattedcontactInfo);
     $("#topContacts").append(formattedcontactInfo);
 
