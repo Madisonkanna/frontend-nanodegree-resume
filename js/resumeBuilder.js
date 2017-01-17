@@ -159,12 +159,8 @@ projects.display = function() {
         $(".project-entry:last").append(formattedprojectDates);
         var formattedprojectDescription = HTMLprojectDescription.replace(data, project.description);
         $(".project-entry:last").append(formattedprojectDescription);
-
-    $("#header").append(HTMLprojectImage);
-    for (var i = 0; i < projects.projects.images.length; i++) {
-    var formattedprojectImage = HTMLprojectImage.replace(data, projects.projects.images[i]);
-    $(".project-entry:last").append(formattedImage);
-}
+        var formattedprojectImage = HTMLprojectImage.replace(data, project.images);
+        $(".project-entry:last").append(formattedprojectImage);
 
     });
 };
