@@ -74,6 +74,13 @@ var projects = {
 
 bio.display = function() {
 
+// Loop over skills
+    $("#header").append(HTMLskillsStart);
+    for (var i = 0; i < bio.skills.length; i++) {
+    var formattedSkill = HTMLskills.replace(data, bio.skills[i]);
+    $("#skills").append(formattedSkill);
+}
+
     var formattedcontactMobile = HTMLmobile.replace(data, bio.contacts.mobile);
     var formattedcontactEmail = HTMLemail.replace(data, bio.contacts.email);
     var formattedcontactGithub = HTMLgithub.replace(data, bio.contacts.github);
@@ -92,12 +99,6 @@ formattedbioInfo = formattedName + formattedRole + formattedbioPic;
 $("#header").prepend(formattedbioInfo);
 $("#header").append(formattedWelcomeMessage);
 
-if (bio.skills.length > 0) {
-    $("#header").append(HTMLskillsStart);
-
-    var formattedSkills = HTMLskills.replace(data, bio.skills);
-    $("#skills").append(formattedSkills);
-}
 
 bio.display();
 
