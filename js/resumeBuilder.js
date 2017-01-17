@@ -159,10 +159,12 @@ projects.display = function() {
         $(".project-entry:last").append(formattedprojectDates);
         var formattedprojectDescription = HTMLprojectDescription.replace(data, project.description);
         $(".project-entry:last").append(formattedprojectDescription);
-        if (project.images.length > 0) {
-            var formattedprojectimage = HTMLprojectImage.replace(data, project.images);
-            $(".project-entry:last").append(formattedprojectimage);
-        }
+
+    projects.projects.images.forEach(function(image) {
+        var formattedprojectImage = HTMLprojectImage.replace(data, project.projects.images);
+        $(".project-entry:last").append(formattedprojectImage);
+    })
+
     });
 };
 
