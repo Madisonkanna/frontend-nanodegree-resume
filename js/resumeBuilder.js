@@ -80,8 +80,7 @@ bio.display = function() {
     var formattedcontactTwitter = HTMLtwitter.replace(data, bio.contacts.twitter);
     var formattedcontactLocation = HTMLlocation.replace(data, bio.contacts.location);
     var formattedcontactInfo = formattedcontactMobile + formattedcontactEmail + formattedcontactGithub + formattedcontactTwitter + formattedcontactLocation;
-    $("#footerContacts").append(formattedcontactInfo);
-    $("#topContacts").append(formattedcontactInfo);
+    $("#topContacts, #footerContacts").append(formattedcontactInfo);
 
 };
 
