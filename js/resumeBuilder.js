@@ -160,10 +160,11 @@ projects.display = function() {
         var formattedprojectDescription = HTMLprojectDescription.replace(data, project.description);
         $(".project-entry:last").append(formattedprojectDescription);
 
-    projects.projects.images.forEach(function(image) {
-        var formattedprojectImage = HTMLprojectImage.replace(data, project.projects.images);
-        $(".project-entry:last").append(formattedprojectImage);
-    })
+    $("#header").append(HTMLprojectImage);
+    for (var i = 0; i < projects.projects.images.length; i++) {
+    var formattedprojectImage = HTMLprojectImage.replace(data, projects.projects.images[i]);
+    $(".project-entry:last").append(formattedImage);
+}
 
     });
 };
