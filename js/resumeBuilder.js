@@ -77,9 +77,9 @@ bio.display = function() {
 // Loop over skills
     $("#header").append(HTMLskillsStart);
     for (var i = 0; i < bio.skills.length; i++) {
-    var formattedSkill = HTMLskills.replace(data, bio.skills[i]);
-    $("#skills").append(formattedSkill);
-}
+        var formattedSkill = HTMLskills.replace(data, bio.skills[i]);
+        $("#skills").append(formattedSkill);
+    }
 
     var formattedcontactMobile = HTMLmobile.replace(data, bio.contacts.mobile);
     var formattedcontactEmail = HTMLemail.replace(data, bio.contacts.email);
@@ -89,15 +89,15 @@ bio.display = function() {
     var formattedcontactInfo = formattedcontactMobile + formattedcontactEmail + formattedcontactGithub + formattedcontactTwitter + formattedcontactLocation;
     $("#topContacts, #footerContacts").append(formattedcontactInfo);
 
-};
+    var formattedName = HTMLheaderName.replace(data, bio.name);
+    var formattedRole = HTMLheaderRole.replace(data, bio.role);
+    var formattedbioPic = HTMLbioPic.replace(data, bio.biopic);
+    var formattedWelcomeMessage = HTMLwelcomeMsg.replace(data, bio.welcomeMessage);
+    formattedbioInfo = formattedName + formattedRole + formattedbioPic;
+    $("#header").prepend(formattedbioInfo);
+    $("#header").append(formattedWelcomeMessage);
 
-var formattedName = HTMLheaderName.replace(data, bio.name);
-var formattedRole = HTMLheaderRole.replace(data, bio.role);
-var formattedbioPic = HTMLbioPic.replace(data, bio.biopic);
-var formattedWelcomeMessage = HTMLwelcomeMsg.replace(data, bio.welcomeMessage);
-formattedbioInfo = formattedName + formattedRole + formattedbioPic;
-$("#header").prepend(formattedbioInfo);
-$("#header").append(formattedWelcomeMessage);
+};
 
 
 bio.display();
